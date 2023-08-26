@@ -34,7 +34,6 @@ function usePokemonList(){
 
         const pokemonData = await axios.all(pokemonResultPromise) 
         // console.log(pokemonData);
-
         
         const pokeListResult = pokemonData.map((pokeData)=>{
             const pokemon = pokeData.data;
@@ -42,7 +41,8 @@ function usePokemonList(){
                 id:pokemon.id,
                 name:pokemon.name, 
                 image:(pokemon.sprites.other) ? pokemon.sprites.other.dream_world.front_default : pokemon.sprites.front_shiny,
-                 types:pokemon.types}
+                 types:pokemon.types
+                }
         })
 
         // console.log(pokeListResult)
